@@ -3,7 +3,7 @@ from django.shortcuts import render
 from builder.models import Jar3DModel
 
 def builder(request):
-    jar = Jar3DModel.objects.first()
+    jar = Jar3DModel.objects.filter(model_name='mason jar').first()
     jar_name = jar.file.name
     mat_name = jar.material.name
     print(jar_name)
